@@ -15,3 +15,11 @@ func main() {
 	fmt.Println(result)
 	fmt.Printf("result %d\n", result)
 }
+
+func ConvertBase(h string, base int) (string, error) {
+	n, err := strconv.ParseInt(h, base, 64)
+	if err != nil {
+		return "", err
+	}
+	return strconv.FormatInt(n, 10), nil
+}
